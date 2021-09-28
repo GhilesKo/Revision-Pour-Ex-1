@@ -34,10 +34,13 @@ public class App
 
         try {
            // File myObj = new File(path+"\\Hello.txt");
-            File myObj = new File(path,"GhilesKouaou.txt");
-            System.out.println(myObj.getParent());
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
+            File myObj = new File(path);
+            File Fichier = new File(myObj.getParentFile(),"Ghiles Kouaou.txt");
+
+
+            System.out.println(Fichier.getParent());
+            if (Fichier.createNewFile()) {
+                System.out.println("File created: " + Fichier.getName());
             } else {
                 System.out.println("File already exists.");
             }
