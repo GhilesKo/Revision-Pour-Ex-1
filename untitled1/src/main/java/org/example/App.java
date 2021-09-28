@@ -1,7 +1,6 @@
 package org.example;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +14,8 @@ public class App
     public static void main( String[] args ) throws Exception {
         //Trouverr("Cax");
         EcrireFichier();
+        LireFichier("C:\\Users\\1584887\\IdeaProjects\\untitled1\\" + "filename.txt");
+
 
     }
     public static void Trouverr(String motCherche) throws Exception {
@@ -48,11 +49,20 @@ public class App
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        ;
+
 
     }
 
+    public static void LireFichier(String Fichier) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(Fichier));
+        String Texte="";
+        while ((Texte = br.readLine()) != null) {
+            System.out.println("-----------");
+            System.out.println(Texte);
+        }
 
+
+    }
 
 
 
